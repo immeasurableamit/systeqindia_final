@@ -1,6 +1,8 @@
-
-
 @extends('layout.master')
+
+@section('title')
+Site Setting
+@endsection
 
 @push('plugin-styles')
 
@@ -14,8 +16,6 @@
 @endpush
 
 @section('content')
-
-
 
     <div class="row">
         <div class="col-md-12 grid-margin">
@@ -72,6 +72,69 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="facebook">Facebook</label>
+                                    <input type="text" name="facebook"
+                                        class="form-control @error('facebook') is-invalid @enderror" id="facebook" value="{{ old('facebook', $siteInfo->facebook) }}">
+                                    @error('facebook')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="twitter">Twitter</label>
+                                    <input type="text" name="twitter"
+                                        class="form-control @error('twitter') is-invalid @enderror" id="twitter" value="{{ old('twitter', $siteInfo->twitter) }}">
+                                    @error('twitter')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="instagram">Instagram</label>
+                                    <input type="text" name="instagram"
+                                        class="form-control @error('instagram') is-invalid @enderror" id="instagram" value="{{ old('instagram', $siteInfo->instagram) }}">
+                                    @error('instagram')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="whatsapp">Whatsapp</label>
+                                    <input type="text" name="whatsapp"
+                                        class="form-control @error('whatsapp') is-invalid @enderror" id="whatsapp" value="{{ old('whatsapp', $siteInfo->whatsapp) }}">
+                                    @error('whatsapp')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="skype">Skype</label>
+                                    <input type="text" name="skype"
+                                        class="form-control @error('skype') is-invalid @enderror" id="skype" value="{{ old('skype', $siteInfo->whatsapp) }}">
+                                    @error('skype')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="copyright">Copyright</label>
