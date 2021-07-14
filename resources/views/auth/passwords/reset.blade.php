@@ -14,11 +14,8 @@
                         </div>
                         <div class="col-md-8 pl-md-0">
                             <div class="auth-form-wrapper px-4 py-5">
-                                <div class="text-center">
-                                    <img src="http://systeqindia.therealcodes.in/public/files/site_logo/1/jOkQZeYUVv.png"
-                                        width="" alt="">
-                                </div>
-                                <a href="#" class="noble-ui-logo d-block mb-2"></a>
+                                <a href="#" class="noble-ui-logo d-block mb-2">Systeq<span>India</span></a>
+
                                 <h5 class="text-muted font-weight-normal mb-4">
                                     {{ __('Change Password') }}</h5>
                                 <form class="forms-sample" method="POST" action="{{ route('password.update') }}">

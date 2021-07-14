@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>{{ $setting->page_title }}</title>
+        <title>@yield('title')</title>
         <meta name='description' itemprop='description' content='{{ $setting->site_description }}' />
         <meta name='keywords' content='{{ $setting->site_keywords }}' />
         <meta property='article:section' content='facility management service' />
@@ -25,6 +25,9 @@
         <!-- Responsive stylesheet -->
         <link rel="stylesheet" href="{{ asset('public/main/css/responsive.css') }}">
         <!-- Favicon -->
+
+        <link rel="shortcut icon" href="{{ FAVICON_IMAGE_URL . '/' . $setting->id . '/' . $setting->favicon }}">
+
 
         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">

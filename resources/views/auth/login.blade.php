@@ -1,6 +1,16 @@
 @extends('layout.master2')
 
+@section('title')
+Login
+@endsection
+
 @section('content')
+    {{-- <style>
+        .page-wrapper {
+            background-image: url("https://media.istockphoto.com/photos/professional-cleaning-service-team-working-with-cleaning-equipment-in-picture-id1130430495?k=6&m=1130430495&s=612x612&w=0&h=7Wba6jlhSyRGK6K8W4rHhltAJe2qao9iBT-qEurXLMQ=");
+            background-repeat: no-repeat, repeat;
+        }
+    </style> --}}
     <div class="page-content d-flex align-items-center justify-content-center">
 
         <div class="row w-100 mx-0 auth-page">
@@ -14,11 +24,8 @@
                         </div>
                         <div class="col-md-8 pl-md-0">
                             <div class="auth-form-wrapper px-4 py-5">
-                                <div class="text-center">
-                                    <img src="http://systeqindia.therealcodes.in/public/files/site_logo/1/jOkQZeYUVv.png"
-                                        width="" alt="">
-                                </div>
-                                <a href="#" class="noble-ui-logo d-block mb-2"></a>
+                                <a href="#" class="noble-ui-logo d-block mb-2">Systeq<span>India</span></a>
+
                                 <h5 class="text-muted font-weight-normal mb-4">
                                     {{ __('Welcome back! Log in to your account.') }}</h5>
                                 <form class="forms-sample" method="POST" action="{{ route('login') }}">
@@ -55,8 +62,8 @@
                                         </button>
 
                                     </div>
-                                    <a href="{{ route('password.request') }}"
-                                        class="d-block mt-3 text-muted">{{ __('Forgot Password') }}</a>
+                                    {{-- <a href="{{ route('password.request') }}"
+                                        class="d-block mt-3 text-muted">{{ __('Forgot Password') }}</a> --}}
                                 </form>
                             </div>
                         </div>

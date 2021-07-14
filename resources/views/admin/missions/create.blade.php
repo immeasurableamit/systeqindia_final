@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('title')
+{{ __('Create Mission') }}
+@endsection
+
 @push('plugin-styles')
 
     <style>

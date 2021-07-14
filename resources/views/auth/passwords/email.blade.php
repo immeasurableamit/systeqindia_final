@@ -1,5 +1,9 @@
 @extends('layout.master2')
 
+@section('title')
+{{ __('Reset Password') }}
+@endsection
+
 @section('content')
     <div class="page-content d-flex align-items-center justify-content-center">
 
@@ -14,11 +18,8 @@
                         </div>
                         <div class="col-md-8 pl-md-0">
                             <div class="auth-form-wrapper px-4 py-5">
-                                <div class="text-center">
-                                    <img src="http://systeqindia.therealcodes.in/public/files/site_logo/1/jOkQZeYUVv.png"
-                                        alt="">
-                                </div>
-                                <a href="#" class="noble-ui-logo d-block mb-2"></a>
+                                <a href="#" class="noble-ui-logo d-block mb-2">Systeq<span>India</span></a>
+
                                 <h3 class="text-muted font-weight-normal mb-4">
                                     {{ __('Reset Password') }}</h3>
                                 <form class="forms-sample" method="POST" action="{{ route('password.email') }}">

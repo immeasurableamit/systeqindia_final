@@ -1,8 +1,12 @@
+@php
+$setting = App\Models\Settings::first();
+@endphp
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Digital CV Admin Dashboard</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +14,7 @@
     <!-- CSRF Token -->
     <meta name="_token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="{{ asset('public/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ FAVICON_IMAGE_URL . '/' . $setting->id . '/' . $setting->favicon }}">
 
     <!-- core:css -->
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/core/core.css') }}">
@@ -28,7 +32,6 @@
 </head>
 
 <body data-base-url="{{ url('/') }}">
-
 
     <div class="main-wrapper" id="app">
         <div class="page-wrapper full-page">
