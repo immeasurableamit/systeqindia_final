@@ -224,12 +224,12 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                             <div class="single-footer-widget marbtm50">
                                 <div class="contact-info-box">
-                                    <div class="footer-logo">
+                                    {{-- <div class="footer-logo">
                                         <a href="index-2.html">
                                             <img src="{{ SITE_LOGO_IMAGE_URL . '/' . $setting->id . '/' . $setting->site_logo }}"
                                                 alt="{{ $setting->short_description }}" alt="Awesome Logo">
                                         </a>
-                                    </div>
+                                    </div> --}}
                                     <ul>
                                         <li>
                                             <h6>Address</h6>

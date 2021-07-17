@@ -43,6 +43,11 @@ define('FOUNDER_MESSAGE_IMAGE_URL', url('/public/files/founder_message'));
 define('BLOG_IMAGE_PATH', public_path() . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'blogs');
 define('BLOG_IMAGE_URL', url( '/public/files/blogs'));
 
+define('PREMIUM_CLIENTS_IMAGE_PATH', public_path() . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'premium-clients');
+define('PREMIUM_CLIENTS_IMAGE_URL', url( '/public/files/premium-clients'));
+
+
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

@@ -391,6 +391,9 @@ Systeqindia Facility Management Services
     </section>
     <!--End Testimonial Area-->
 
+
+
+
     <!--Start appointment Area-->
     <section class="appointment-area" style="background-image:url(images/resources/appointment-bg.jpg);" id='contact'>
         <div class="container">
@@ -562,6 +565,8 @@ Systeqindia Facility Management Services
     @endif
     <!--End latest blog area-->
 
+
+
     <!-- Start modal  -->
     <div class="container">
         <!-- Modal -->
@@ -573,8 +578,6 @@ Systeqindia Facility Management Services
                     <div class="modal-header">
                         <h4 class="modal-title">Welcome To SYSTEQIndia </h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-
                     </div>
                     <div class="modal-body">
 
@@ -614,7 +617,6 @@ Systeqindia Facility Management Services
                                         </div>
                                     </div>
                                 </div>
-
 
                                 <div class="row">
                                     <div class="col-xl-12">
