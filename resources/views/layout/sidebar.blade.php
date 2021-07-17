@@ -4,7 +4,8 @@
             $setting = App\Models\Settings::first();
         @endphp
         {{-- <img src="{{ ADMIN_SMALL_LOGO_IMAGE_PATH . '/' . $setting->id . '/' . $setting->admin_small_logo }}" alt=""> --}}
-         <img class="text-center" src="http://systeqindia.therealcodes.in/public/files/site_logo/1/jOkQZeYUVv.png" width="80px" alt="">
+        <img class="text-center" src="http://systeqindia.therealcodes.in/public/files/site_logo/1/jOkQZeYUVv.png"
+            width="80px" alt="">
         <div class="sidebar-toggler not-active">
             <span></span>
             <span></span>
@@ -143,6 +144,9 @@
 
                         <li class="nav-item"> <a class="nav-link " href="{{ route('site-image.create') }}">Site
                                 Images</a></li>
+
+                        <li class="nav-item"> <a class="nav-link"
+                                href="{{ route('faq.index') }}">Faq</a></li>
                     </ul>
                 </div>
             </li>
