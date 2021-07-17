@@ -10,8 +10,6 @@ Testimonial | Systeqindia Facility Management Services
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-@endsection
-
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">

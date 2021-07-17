@@ -118,8 +118,4 @@ Testimonial | Systeqindia Facility Management Services
 @push('plugin-scripts')
     <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/select2/select2.min.js') }}"></script>
-
-
-    @push('custom-scripts')
-
-    @endpush
+@endpush
