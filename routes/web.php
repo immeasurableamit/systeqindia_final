@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\LabourController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PremiumClintsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,4 +128,8 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('faq', FaqController::class);
     Route::post('faq/{faq}', [FaqController::class, 'update']);
+
+    Route::resource('premium-clients', PremiumClintsController::class);
+    Route::post('premium-clients/{premium_client}', [PremiumClintsController::class, 'update']);
+
 });

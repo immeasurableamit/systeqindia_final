@@ -119,6 +119,12 @@
                 </a>
             </li>
 
+            <li class="nav-item @if (Route::is('premium-clients.index')) active @endif">
+                <a class="nav-link" href="{{ route('premium-clients.index') }}">
+                    <i class="fas fa-users menu-icon"></i>
+                    <span class="link-title">Premium Clients</span>
+                </a>
+            </li>
 
             <li class="nav-item @if (Route::is('testimonial.*')) active @endif">
                 <a class="nav-link" href="{{ route('testimonial.index') }}">
