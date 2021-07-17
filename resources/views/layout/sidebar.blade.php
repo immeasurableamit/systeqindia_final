@@ -120,7 +120,7 @@
 
 
             <li class="nav-item @if (Route::is('testimonial.*')) active @endif">
-                <a class="nav-link" href="{{ route('testimonial.create') }}">
+                <a class="nav-link" href="{{ route('testimonial.index') }}">
                     <i class="fas fa-comment-alt menu-icon"></i>
                     <span class="link-title">Testimonials</span>
                 </a>
