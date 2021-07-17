@@ -11,6 +11,16 @@ use App\Models\Labour;
 class LabourController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -18,7 +28,7 @@ class LabourController extends Controller
     public function index()
     {
         $labours = Labour::latest()->paginate(10);
-        return view('admin.labour.index',compact('labours'));
+        return view('admin.labour.index', compact('labours'));
     }
 
     /**
@@ -29,7 +39,7 @@ class LabourController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('admin.labour.create',compact('categories'));
+        return view('admin.labour.create', compact('categories'));
     }
 
     /**
@@ -59,7 +69,7 @@ class LabourController extends Controller
     {
         $labour = Labour::find($id);
         $categories = Category::get();
-        return view('admin.labour.edit', compact('labour','categories'));
+        return view('admin.labour.edit', compact('labour', 'categories'));
     }
 
     /**
@@ -75,7 +85,7 @@ class LabourController extends Controller
         $payload['created_by'] = auth()->user()->id;
         $labour = Labour::findOrFail($id);
 
-        if (!empty( $labour)) {
+        if (!empty($labour)) {
             $labour->update($payload);
             flash('Updated successfully')->success();
             return redirect()->route('labour-management.edit', ['labour_management' => $labour->id]);
