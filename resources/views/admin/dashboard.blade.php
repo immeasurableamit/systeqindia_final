@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('title')
+Dashboard | Systeqindia Facility Management Services
+@endsection
+
 @push('plugin-styles')
     <link href="{{ asset('public/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}"
         rel="stylesheet" />

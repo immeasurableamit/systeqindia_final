@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-Site Setting
+Site Info | Systeqindia Facility Management Services
 @endsection
 
 @push('plugin-styles')
@@ -191,7 +191,6 @@ Site Setting
                                 </div>
                             </div>
 
-
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="phone">Phone</label>
@@ -205,28 +204,15 @@ Site Setting
                                     @enderror
                                 </div>
                             </div>
-
-
-
-
                         </div>
                         <button type="submit" class="btn btn btn-primary">Update</button>
-
-
                     </form>
-
-
                 </div>
             </div>
         </div>
     </div>
 
-
-
-
-
-
-@endsection
+    @endsection
 
 @push('plugin-scripts')
     <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
@@ -245,9 +231,3 @@ Site Setting
 
         </script>
     @endpush
-
-
-
-
-
-

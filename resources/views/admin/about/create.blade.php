@@ -15,6 +15,11 @@
 
 @endpush
 
+@section('title')
+About | Systeqindia Facility Management Services
+@endsection
+
+
 @section('content')
 
     <div class="row">

@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('title')
+Services | Systeqindia Facility Management Services
+@endsection
+
 @push('plugin-styles')
 
     <style>

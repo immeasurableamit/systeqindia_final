@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-{{ __('Create Mission') }}
+Mission | Systeqindia Facility Management Services
 @endsection
 
 @push('plugin-styles')
