@@ -119,12 +119,12 @@
             </li>
 
 
-            {{-- <li class="nav-item @if (Route::is('testimonial.*')) active @endif">
+            <li class="nav-item @if (Route::is('testimonial.*')) active @endif">
                 <a class="nav-link" href="{{ route('testimonial.create') }}">
                     <i class="fas fa-comment-alt menu-icon"></i>
                     <span class="link-title">Testimonials</span>
                 </a>
-            </li> --}}
+            </li>
 
             <li class="nav-item @if (Route::is('teams.index')) active @endif">
                 <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false"
