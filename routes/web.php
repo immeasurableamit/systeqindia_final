@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\ApointmentController as AppApointmentController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactUsController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\LabourController;
 use App\Http\Controllers\Admin\PageController;
 
@@ -126,6 +127,10 @@ Route::prefix('admin')->group(function () {
 
     Route::get('change/password',[AccountController::class, 'showChangePasswordForm'])->name('password.change');
     Route::post('changePassword',[AccountController::class, 'changePassword'])->name('changePassword');
+
+    Route::resource('faq', FaqController::class);
+    Route::post('faq/{faq}', [FaqController::class, 'update']);
+
 
 
 });
