@@ -57,14 +57,11 @@ Route::get('contact', [HomeController::class, 'contact']);
 
 Route::get('blog/{slug}', [HomeController::class, 'blogDescription']);
 
+Route::get('faq', [HomeController::class, 'faq']);
+
 Route::resource('appointment', ApointmentController::class);
 
-
-
-
 Auth::routes();
-
-
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -125,14 +122,9 @@ Route::prefix('admin')->group(function () {
     Route::resource('pages', PageController::class);
     Route::post('pages/{page}', [PageController::class, 'update']);
 
-    Route::get('change/password',[AccountController::class, 'showChangePasswordForm'])->name('password.change');
-    Route::post('changePassword',[AccountController::class, 'changePassword'])->name('changePassword');
+    Route::get('change/password', [AccountController::class, 'showChangePasswordForm'])->name('password.change');
+    Route::post('changePassword', [AccountController::class, 'changePassword'])->name('changePassword');
 
     Route::resource('faq', FaqController::class);
     Route::post('faq/{faq}', [FaqController::class, 'update']);
-
-
-
 });
-
-

@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-Labour | Systeqindia Facility Management Services
+    Labour | Systeqindia Facility Management Services
 @endsection
 
 @push('plugin-styles')
@@ -26,7 +26,8 @@ Labour | Systeqindia Facility Management Services
                     <h6 class="card-title">Add labour</h6>
                     @include('flash::message')
 
-                    <form action="{{ route('labour-management.update',['labour_management' => $labour->id]) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('labour-management.update', ['labour_management' => $labour->id]) }}"
+                        method="post" enctype="multipart/form-data">
 
                         @csrf
                         <div class="row">
@@ -38,7 +39,9 @@ Labour | Systeqindia Facility Management Services
                                         id="category">
                                         <option value="" selected>Select Your Option</option>
                                         @foreach ($categories as $category)
-                                        <option value="1" {{ old('category', $labour->category) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                                            <option value="1"
+                                                {{ old('category', $labour->category) == $category->id ? 'selected' : '' }}>
+                                                {{ $category->name }}</option>
                                         @endforeach
                                     </select>
 
@@ -55,7 +58,7 @@ Labour | Systeqindia Facility Management Services
                                 <div class="form-group">
                                     <label for="title">Name <span class="text-red">*</span></label>
                                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                        id="name" value="{{ old('name' , $labour->name) }}">
+                                        id="name" value="{{ old('name', $labour->name) }}">
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -99,7 +102,7 @@ Labour | Systeqindia Facility Management Services
                                     <label for="order"> Address </label>
                                     <input type="text" name="address"
                                         class="form-control @error('address') is-invalid @enderror" id="address"
-                                        value="{{ old('address',$labour->address) }}">
+                                        value="{{ old('address', $labour->address) }}">
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -109,9 +112,10 @@ Labour | Systeqindia Facility Management Services
                             </div>
 
                         </div>
-<button type="submit" class="btn btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn btn-primary">Update</button>
 
-                        <a href="#" data-toggle="modal" data-target="#deleteModal_{{$labour->id}}" class="btn btn-danger"> Delete</a>
+                        <a href="#" data-toggle="modal" data-target="#deleteModal_{{ $labour->id }}"
+                            class="btn btn-danger"> Delete</a>
                     </form>
 
 
@@ -124,8 +128,8 @@ Labour | Systeqindia Facility Management Services
 
 
     <!-- Modal -->
-    <div class="modal fade" id="deleteModal_{{$labour->id}}" tabindex="-1" role="dialog" aria-labelledby="teamModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="deleteModal_{{ $labour->id }}" tabindex="-1" role="dialog"
+        aria-labelledby="teamModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -138,12 +142,11 @@ Labour | Systeqindia Facility Management Services
                     You wont be able to revert this!
                 </div>
                 <div class="modal-footer">
-                   <form action="{{ route('labour-management.destroy', $labour->id) }}" method="POST">
-    {{ method_field('DELETE') }}
-    {{ csrf_field() }}
+                    <form action="{{ route('labour-management.destroy', $labour->id) }}" method="POST">
+                        {{ method_field('DELETE') }}
+                        {{ csrf_field() }}
 
-                        <button type="button" class="btn btn-danger"
-                            data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-success">Yes, delete it!</button>
                     </form>
                 </div>

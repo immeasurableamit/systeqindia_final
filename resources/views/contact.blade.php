@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+Contact | Systeqindia Facility Management Services
+@endsection
+
 @section('content')
 
    <section class="appointment-area container" style="background-image:url(images/resources/appointment-bg.jpg);" id='contact'>

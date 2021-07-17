@@ -15,6 +15,7 @@ use App\Http\Requests\FounderMessageRequest;
 use App\Models\FounderMessage;
 use App\Models\Settings;
 use App\Models\Blog;
+use App\Models\Faq;
 use App\Models\Page;
 
 class HomeController extends Controller
@@ -82,14 +83,18 @@ class HomeController extends Controller
     public function contact()
     {
         $setting = Settings::first();
-
         return view('contact', compact('setting'));
     }
 
     public function pages($slug)
     {
         $page = Page::where('slug', $slug)->first();
-
         return view('page', compact('page'));
+    }
+
+    public function faq()
+    {
+        $faqs = Faq::get();
+        return view('faq', compact('faqs'));
     }
 }

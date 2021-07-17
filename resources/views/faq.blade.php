@@ -1,21 +1,20 @@
 @extends('layout.app')
 
 @section('title')
-Team | Systeqindia Facility Management Services
+FAQ | Systeqindia Facility Management Services
 @endsection
 
 @section('content')
 
     <!--Start blog area-->
-    <section class="latest-blog-area" id='blog'>
+   <section class="latest-blog-area container" id='blog'>
         <div class="container inner-content">
             <div class="sec-title text-center">
-                <div class="title">{{ $page->title }} <span></span></div>
+                <div class="title">Frequently Asked Questions <span></span></div>
             </div>
-            <div class="row">
+              <div class="row">
                 <!--Start Single Testimonial Item-->
 
-<div class="container"> <p>{!! $page->description !!}</p></div>
 
             </div>
         </div>

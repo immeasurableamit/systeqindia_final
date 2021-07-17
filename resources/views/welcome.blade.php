@@ -1,5 +1,9 @@
 @extends('layout.app')
 
+@section('title')
+Systeqindia Facility Management Services
+@endsection
+
 @section('content')
 
 
