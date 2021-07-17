@@ -107,6 +107,8 @@
 
                                                     </li>
                                                     <li class="dropdown"><a href="{{ url('blog') }}">Blog</a>
+                                                        <li class="dropdown"><a href="{{ url('faq') }}">Faq</a>
+
                                                     <li><a href="{{ url('contact') }}">Contact</a></li>
                                                 </ul>
                                             </div>
