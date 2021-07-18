@@ -22,7 +22,7 @@
             font-style: normal;
             /* font-size: 3rem; */
             content: "\f106";
-            color: #616a75;
+            color: #3579c7;
             float: right;
             /* margin-top: -12px; */
         }
@@ -44,7 +44,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading p-3 mb-3" role="tab" id="heading{{ $faq->id }}">
                                     <h3 class="panel-title">
-                                        <a style="color: #737980" class="collapsed" role="button" title="" data-toggle="collapse"
+                                        <a style="color: #3579c7" class="collapsed" role="button" title="" data-toggle="collapse"
                                             data-parent="#accordion" href="#collapse{{ $faq->id }}" aria-expanded="true"
                                             aria-controls="collapse{{ $faq->id }}">
                                             {{ $faq->question }}

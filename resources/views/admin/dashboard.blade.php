@@ -278,12 +278,12 @@ Dashboard | Systeqindia Facility Management Services
                                 </thead>
                                 <tbody>
 
-                                    @foreach (App\Models\Contact::latest()->get()->take('5') as $contact)
+                                    @foreach (App\Models\Appointment::latest()->get()->take('10') as $contact)
                                         <tr>
                                             <th scope="row">{{ $loop->iteration }}</th>
                                             <td>{{ $contact->name }}</td>
                                             <td>{{ $contact->email }}</td>
-                                            <td>{{ $contact->address }}</td>
+                                            <td>{{ $contact->appartment_name }}</td>
                                             <td>{{ $contact->phone_no }}</td>
 
                                         </tr>

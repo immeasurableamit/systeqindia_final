@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('title')
-Systeqindia Facility Management Services
+    Systeqindia Facility Management Services
 @endsection
 
 @section('content')
@@ -15,36 +15,38 @@ Systeqindia Facility Management Services
                     @foreach ($sliders as $slider)
 
 
-                    <li data-description="Slide Description" data-easein="default" data-easeout="default"
-                        data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0"
-                        data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1=""
-                        data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
-                        data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off"
-                        data-slotamount="default" data-thumb="images/slides/1.jpg" data-title="Slide Title"
-                        data-transition="parallaxvertical">
+                        <li data-description="Slide Description" data-easein="default" data-easeout="default"
+                            data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0"
+                            data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1=""
+                            data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                            data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off"
+                            data-slotamount="default"
+                            data-thumb="{{ SLIDER_IMAGE_URL . '/' . $slider->id . '/' . $slider->slider_image }}"
+                            data-title="Slide Title" data-transition="parallaxvertical">
 
-                        <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10"
-                            data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina=""
-                            src="{{ SLIDER_IMAGE_URL . '/' . $slider->id . '/' . $slider->slider_image }}">
 
-                        <div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                            data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]" data-responsive_offset="on"
-                            data-type="text" data-height="none" data-width="['800','800','700','500']"
-                            data-whitespace="normal" data-hoffset="['15','15','15','15']"
-                            data-voffset="['-160','-100','-110','-105']" data-x="['left','left','left','left']"
-                            data-y="['middle','middle','middle','middle']" data-textalign="['top','top','top','top']"
-                            data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
-                            style="z-index: 7; white-space: nowrap;">
-                            <div class="slide-content left-slide">
-                                <div class="big-title">
-                                    {{ $slider->title }}
+                            <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10"
+                                data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina=""
+                                src="{{ SLIDER_IMAGE_URL . '/' . $slider->id . '/' . $slider->slider_image }}">
+
+                            <div class="" style="margin-top: 290px; margin-left: 51px;" data-paddingbottom="[0,0,0,0]"
+                                data-paddingleft="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingtop="[0,0,0,0]"
+                                data-responsive_offset="on" data-type="text" data-height="none"
+                                data-width="['700','800','700','500']" data-whitespace="normal"
+                                data-hoffset="['15','15','15','15']" data-voffset="['-160','-100','-110','-105']"
+                                data-x="['right','right','right','left']" data-y="['middle','middle','middle','middle']"
+                                data-textalign="['top','top','top','top']"
+                                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+                                style="z-index: 7; white-space: nowrap;">
+                                <div class="slide-content left-slide">
+                                    <div class="big-title">
+                                        {{ $slider->title }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
 
-                    </li>
-
+                        </li>
                     @endforeach
 
 
@@ -173,21 +175,21 @@ Systeqindia Facility Management Services
                 <!--Start single highlight box-->
                 @foreach ($sliderServices as $sliderService)
 
-                <div class="col-xl-4 col-lg-4">
-                    <div class="single-highlight-box text-center wow fadeInUp" data-wow-delay="0ms"
-                        data-wow-duration="1200ms">
-                        <div class="icon-holder">
-                            <span class="{{ $sliderService->slider_image }}"></span>
-                        </div>
-                        <div class="inner-content">
-                            <div class="text">
-                                <h3>{{ $sliderService->title }}</h3>
-                                <p>{{ $sliderService->description }}</p>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="single-highlight-box text-center wow fadeInUp" data-wow-delay="0ms"
+                            data-wow-duration="1200ms">
+                            <div class="icon-holder">
+                                <span class="{{ $sliderService->slider_image }}"></span>
                             </div>
-                            <!--<a class="btn-one" href="#">Read More<span class="flaticon-next"></span></a>-->
+                            <div class="inner-content">
+                                <div class="text">
+                                    <h3>{{ $sliderService->title }}</h3>
+                                    <p>{{ $sliderService->description }}</p>
+                                </div>
+                                <!--<a class="btn-one" href="#">Read More<span class="flaticon-next"></span></a>-->
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 @endforeach
 
@@ -206,7 +208,8 @@ Systeqindia Facility Management Services
                 <div class="col-xl-5 col-lg-5">
                     <div class="about-image-box">
                         <div class="inner-box">
-                            <img src="{{ FOUNDER_MESSAGE_IMAGE_URL . '/' . $founder_message->id . '/' . $founder_message->founder_message_image }}" alt="{{ $founder_message->name }}">
+                            <img src="{{ FOUNDER_MESSAGE_IMAGE_URL . '/' . $founder_message->id . '/' . $founder_message->founder_message_image }}"
+                                alt="{{ $founder_message->name }}">
                         </div>
                         <div class="text-box">
                             <p>{{ $founder_message->description }}</p>
@@ -221,22 +224,22 @@ Systeqindia Facility Management Services
                         </div>
                         <div class="inner-content">
                             <div class="text">
-                               <p>{!! $about->description !!}</p>
+                                <p>{!! $about->description !!}</p>
 
                             </div>
                             <div class="about-carousel-box owl-carousel owl-theme">
                                 <!--Start Single Box-->
                                 @foreach ($mission as $item)
 
-                                <div class="single-box">
-                                    <div class="icon-holder">
-                                        <span class="icon-target"></span>
+                                    <div class="single-box">
+                                        <div class="icon-holder">
+                                            <span class="icon-target"></span>
+                                        </div>
+                                        <div class="text-holder">
+                                            <h3>{{ $item->title }}</h3>
+                                            <p>{{ $item->description }}</p>
+                                        </div>
                                     </div>
-                                    <div class="text-holder">
-                                        <h3>{{ $item->title }}</h3>
-                                        <p>{{ $item->description }}</p>
-                                    </div>
-                                </div>
                                 @endforeach
 
                                 <!--End Single Box-->
@@ -267,32 +270,33 @@ Systeqindia Facility Management Services
                 <!--Start Single Working Box-->
                 @foreach ($industries as $industrie)
 
-                <div class="col-xl-4 col-lg-4">
-                    <div class="single-working-box wow fadeInDown" data-wow-delay="0ms">
-                        <div class="img-holder">
-                            <div class="inner">
-                                <img src="{{ WORKING_IMAGE_URL . '/' . $industrie->id . '/' . $industrie->image }}" alt="Awesome Image">
-                                <div class="overlay-style-one"></div>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="single-working-box wow fadeInDown" data-wow-delay="0ms">
+                            <div class="img-holder">
+                                <div class="inner">
+                                    <img src="{{ WORKING_IMAGE_URL . '/' . $industrie->id . '/' . $industrie->image }}"
+                                        alt="Awesome Image">
+                                    <div class="overlay-style-one"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="text-holder">
-                            <div class="plus-icon-box"><span class="icon-plus"></span></div>
-                            <div class="outer-box">
-                                <div class="icon">
-                                    <div class="inner">
-                                        <div class="box">
-                                            <span class="{{ $industrie->icon }}"></span>
+                            <div class="text-holder">
+                                <div class="plus-icon-box"><span class="icon-plus"></span></div>
+                                <div class="outer-box">
+                                    <div class="icon">
+                                        <div class="inner">
+                                            <div class="box">
+                                                <span class="{{ $industrie->icon }}"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="text">
-                                    <h3>{{ ucfirst($industrie->title) }}</h3>
-                                    <p>{{ $industrie->description }}</p>
+                                    <div class="text">
+                                        <h3>{{ ucfirst($industrie->title) }}</h3>
+                                        <p>{{ $industrie->description }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
                 <!--End Single Working Box-->
 
@@ -302,6 +306,85 @@ Systeqindia Facility Management Services
     <!--End Working Area-->
 
 
+
+
+    <!--Start Testimonial Style3 Area-->
+    @if ($testimonials->count() > 0)
+        <section class="testimonial-style3-area">
+            <div class="container">
+                <div class="sec-title with-text max-width text-center wow fadeInDown" data-wow-delay="100ms"
+                    data-wow-duration="1200ms">
+                    {{-- <p>testimonials</p> --}}
+                    <div class="title">TESTIMONIALS</div>
+                    {{-- <p class="bottom-text">We are an Interior Designer, Who believe in excellence, quality and honesty, yes
+                        we design beautiful home interiors.</p> --}}
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="testimonial-carousel-2 owl-carousel owl-theme">
+                            @foreach ($testimonials as $testimonial)
+                                <!--Start Single Testimonial style2-->
+                                <div class="single-testimonial-style3">
+                                    <div class="inner-content">
+                                        <div class="client-info">
+                                            <div class="image">
+                                                <img src="{{ TESTIMONIAL_IMAGE_URL . '/' . $testimonial->id . '/' . $testimonial->testimonial_image }}"
+                                                    alt="Awesome Image">
+                                            </div>
+                                            <div class="title">
+                                                <h3>{{ $testimonial->name }}</h3>
+                                                <span>{{ $testimonial->job }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-box">
+                                            <p>{{ $testimonial->description }}</p>
+                                        </div>
+                                        <div class="review-box">
+                                            <ul>
+                                                @switch($testimonial->star)
+                                                    @case(1)
+                                                        <li><i class="fa fa-star"></i></li>
+
+                                                    @break
+                                                    @case(2)
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+
+                                                    @break
+
+                                                    @case(3)
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+
+                                                    @break
+
+                                                    @case(4)
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+
+
+                                                    @break
+                                                    @default
+
+                                                @endswitch
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Single Testimonial style2 -->
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    @endif
+    <!--End Testimonial Style3 Area-->
 
 
     <!--Start All Services  Area-->
@@ -338,14 +421,14 @@ Systeqindia Facility Management Services
                     </div>
                 @endforeach
 
-                           <!--End Single Working Box-->
+                <!--End Single Working Box-->
             </div>
         </div>
     </section>
     <!--End  All Services  Area-->
 
 
-    <!--Start Testimonial Area-->
+    <!--Start Team Area-->
     <section class="testimonial-area" id='our_team'>
         <div class="container">
             <div class="row">
@@ -355,8 +438,8 @@ Systeqindia Facility Management Services
                         <div class="title">Our <span>Team</span></div>
                     </div>
                     <!--    <div class="more-reviews-button float-right">
-                                            <a class="btn-two" href="#">More Reviews<span class="flaticon-next"></span></a>
-                                        </div>-->
+                                                                            <a class="btn-two" href="#">More Reviews<span class="flaticon-next"></span></a>
+                                                                        </div>-->
                 </div>
             </div>
             <div class="row">
@@ -405,27 +488,27 @@ Systeqindia Facility Management Services
                             <div class="title">How Can We <span>Help You?</span></div>
                         </div>
                         <div class="inner paroller">
-                            <img src="{{ asset('public/main/images/resources/map.png')}}" alt="Map">
+                            <img src="{{ asset('public/main/images/resources/map.png') }}" alt="Map">
                             <div class="overlay">
                                 <div class="single-location-box one wow zoomIn" data-wow-delay="100ms"
                                     data-wow-duration="1500ms">
                                     <!--<div class="marker-box">
-                                                            <span class="icon-pin"></span>
-                                                        </div>-->
+                                                                                            <span class="icon-pin"></span>
+                                                                                        </div>-->
                                     <!--  <div class="location-info">
-                                                            <h3>Bengaluru,India</h3>
-                                                            <p>2nd Main Road<br>+91 84003 80044<br>systeqindia@gmail.com</p>
-                                                        </div>-->
+                                                                                            <h3>Bengaluru,India</h3>
+                                                                                            <p>2nd Main Road<br>+91 84003 80044<br>systeqindia@gmail.com</p>
+                                                                                        </div>-->
                                 </div>
                                 <div class="single-location-box two wow zoomIn" data-wow-delay="300ms"
                                     data-wow-duration="1500ms">
                                     <!--<div class="marker-box">
-                                                            <span class="icon-pin"></span>
-                                                        </div>-->
+                                                                                            <span class="icon-pin"></span>
+                                                                                        </div>-->
                                     <!--<div class="location-info">
-                                                            <h3>Bengaluru,India</h3>
-                                                            <p>2nd Main Road<br>+91 84003 80044<br>systeqindia@gmail.com</p>
-                                                        </div>-->
+                                                                                            <h3>Bengaluru,India</h3>
+                                                                                            <p>2nd Main Road<br>+91 84003 80044<br>systeqindia@gmail.com</p>
+                                                                                        </div>-->
                                 </div>
                                 <div class="single-location-box three wow zoomIn" data-wow-delay="500ms"
                                     data-wow-duration="1500ms">
@@ -461,21 +544,24 @@ Systeqindia Facility Management Services
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="single-box">
-                                            <input type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                                            <input type="email" name="email" placeholder="Email"
+                                                value="{{ old('email') }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="single-box">
-                                            <input type="text" name="phone_no" placeholder="Phone No." value="{{ old('phone_no') }}">
+                                            <input type="text" name="phone_no" placeholder="Phone No."
+                                                value="{{ old('phone_no') }}">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="single-box">
-                                            <input type="text" name="address" placeholder="Address." value="{{ old('address') }}">
+                                            <input type="text" name="appartment_name" placeholder="Address."
+                                                value="{{ old('appartment_name') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -500,72 +586,150 @@ Systeqindia Facility Management Services
     </section>
     <!--End appointment Area-->
 
+    @if ($gallery->count() > 0)
+        <!--Start Recently Project Area-->
+        <section class="recently-project-area" style="background-color: #f6f6f6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="sec-title float-left">
+                            {{-- <p>Our</p> --}}
+                            <div class="title">Gallery</div>
+                        </div>
+                        <div class="more-project-button float-right">
+                            <a class="btn-two" href="{{ url('gallery') }}">More Gallery<span
+                                    class="flaticon-next"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="project-carousel owl-carousel owl-theme">
+                    @foreach ($gallery as $item)
+                        <!--Start single project style1-->
+                        <div class="single-project-style1">
+                            <div class="img-holder">
+                                <img src="{{ GALLERY_IMAGE_URL . '/' . $item->images }}" alt="Awesome Image">
+                                <div class="overlay-content">
+                                    {{-- <div class="inner-content">
+                                <div class="link-box">
+                                    <a class="btn-one" href="#">Case Study<span class="flaticon-next"></span></a>
+                                </div>
+                            </div> --}}
+                                </div>
+                                {{-- <div class="title-box">
+                            <span>Modern Design</span>
+                            <h3>Office Partition Walls</h3>
+                        </div> --}}
+                            </div>
+                        </div>
+                        <!--End single project style1-->
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        <!--End Recently Project Area-->
+    @endif
+
     <!--Start latest blog area-->
     @if (!empty($blogs))
-           <section class="latest-blog-area" id='blog'>
-        <div class="container inner-content">
-            <div class="sec-title text-center">
-                <p>News & Updates</p>
-                <div class="title">Latest From <span>Blog</span></div>
-            </div>
-            <div class="row">
-                <!--Start single blog post-->
-                @foreach ($blogs as $blog)
+        <section class="latest-blog-area" id='blog'>
+            <div class="container inner-content">
+                <div class="sec-title text-center">
+                    <p>News & Updates</p>
+                    <div class="title">Latest From <span>Blog</span></div>
+                </div>
+                <div class="row">
+                    <!--Start single blog post-->
+                    @foreach ($blogs as $blog)
 
-                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                    <div class="single-blog-post wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="img-holder">
-                            <img  src="{{ BLOG_IMAGE_URL . '/' . $blog->id . '/' . $blog->blog_image }}"
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                            <div class="single-blog-post wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <div class="img-holder">
+                                    <img src="{{ BLOG_IMAGE_URL . '/' . $blog->id . '/' . $blog->blog_image }}"
                                         alt="{{ $blog->title }}">
-                            <div class="overlay-style-two"></div>
-                            <div class="overlay">
-                                <div class="box">
-                                    <div class="link-icon">
-                                        <a href="#"><span class="flaticon-zoom"></span></a>
+                                    <div class="overlay-style-two"></div>
+                                    <div class="overlay">
+                                        <div class="box">
+                                            <div class="link-icon">
+                                                <a href="#"><span class="flaticon-zoom"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-holder">
+                                    <div class="post-date">
+                                        <h3>{{ date('d', strtotime($blog->created_at)) }}
+                                            <span> {{ date('M-Y', strtotime($blog->created_at)) }}</span>
+                                        </h3>
+                                    </div>
+                                    <div class="meta-box">
+                                        <ul class="meta-info">
+                                            <li>By <a>
+                                                    @if ($blog->created_by == 1)
+                                                        SysteqIndia
+                                                    @else
+                                                        Admin
+                                                    @endif
+                                                </a></li>
+
+                                        </ul>
+                                    </div>
+                                    <h3 class="blog-title"><a
+                                            href="blog-single.html">{{ \Illuminate\Support\Str::limit($blog->title, 33, '...') }}</a>
+                                    </h3>
+                                    <div class="text">
+                                        @php
+                                            $description = Str::limit($blog->description, 100);
+                                        @endphp
+                                        <p>{!! $blog->title !!}</p>
+                                        <a class="btn-two" href="{{ url('blog', ['slug' => $blog->slug]) }}">Read
+                                            More<span class="flaticon-next"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-holder">
-                            <div class="post-date">
-                                <h3>{{ date('d', strtotime($blog->created_at)) }}
-                                <span> {{ date('M-Y', strtotime($blog->created_at)) }}</span></h3>
-                            </div>
-                            <div class="meta-box">
-                                <ul class="meta-info">
-                                    <li>By <a>
-                                        @if ($blog->created_by == 1)
-                                        SysteqIndia
-                                        @else
-                                        Admin
-                                        @endif
-                                    </a></li>
 
-                                </ul>
-                            </div>
-                            <h3 class="blog-title"><a href="blog-single.html">{{ \Illuminate\Support\Str::limit($blog->title, 33, '...') }}</a></h3>
-                            <div class="text">
-                                @php
-                                $description =Str::limit($blog->description, 100);
-                                @endphp
-                                <p>{!! $blog->title  !!}</p>
-                                <a class="btn-two" href="{{ url('blog',['slug' => $blog->slug]) }}">Read More<span class="flaticon-next"></span></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
+                    <!--End single blog post-->
+
                 </div>
-
-                @endforeach
-
-                <!--End single blog post-->
-
             </div>
-        </div>
-    </section>
+        </section>
     @endif
     <!--End latest blog area-->
 
+    @if ($premium_clints->count() > 0)
+        <!--Start Brand area-->
+        <section class="brand-area">
+            <div class="container">
+                <div class="sec-title">
+                    <div class="title">OUR PREMIUM CLIENTS</div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <ul class="brand-items-carousel owl-carousel owl-theme">
+                            @foreach ($premium_clints as $premium_clint)
+                                <!--Start Single Brand Item-->
+                                <li>
+                                    <a href="#"><img
+                                            src="{{ PREMIUM_CLIENTS_IMAGE_URL . '/' . $premium_clint->id . '/' . $premium_clint->image }}"
+                                            alt="Awesome Brand Image"></a>
+                                    <div class="overlay-content">
+                                        <p>{{ $premium_clint->title }}</p>
+                                    </div>
+                                </li>
+                                <!--End Single Brand Item-->
+                            @endforeach
 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Brand area-->
+    @endif
 
     <!-- Start modal  -->
     <div class="container">
@@ -582,29 +746,12 @@ Systeqindia Facility Management Services
                     <div class="modal-body">
 
                         <div class="appointment">
-                            <form class="appointment-form" method='post'
-                                action="{{ route('appointment.store') }}">
+                            <form class="appointment-form" method='post' action="{{ route('appointment.store') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="single-box">
-                                            <input type="text" name="name" value=""
-                                                placeholder="Contact Person Name." required="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        <div class="single-box">
-                                            <input type="text" name="appartment_name" value=""
-                                                placeholder="Apartment Name" required="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        <div class="single-box">
-                                            <input type="email" name="email" value="" placeholder="Email"
+                                            <input type="text" name="name" value="" placeholder="Contact Person Name."
                                                 required="">
                                         </div>
                                     </div>
@@ -612,8 +759,22 @@ Systeqindia Facility Management Services
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="single-box">
-                                            <input type="text" name="phone_no" value="" placeholder="Phone No."
+                                            <input type="text" name="appartment_name" value="" placeholder="Apartment Name"
                                                 required="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="single-box">
+                                            <input type="email" name="email" value="" placeholder="Email" required="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="single-box">
+                                            <input type="text" name="phone_no" value="" placeholder="Phone No." required="">
                                         </div>
                                     </div>
                                 </div>
@@ -641,4 +802,3 @@ Systeqindia Facility Management Services
 
 
 @endsection
-
