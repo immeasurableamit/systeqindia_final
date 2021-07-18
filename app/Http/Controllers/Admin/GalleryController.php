@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\PostPageRequest;
-use App\Models\Page;
+use File;
 use Str;
+use Image;
+use App\Http\Controllers\Controller;
+use App\Models\Gallery;
+use Illuminate\Http\Request;
 
-
-class PageController extends Controller
+class GalleryController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,7 +18,7 @@ class PageController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware('auth');
     }
 
     /**
@@ -28,8 +28,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages = Page::latest()->paginate(10);
-        return view('admin.pages.index', compact('pages'));
+        $galleries = Gallery::latest()->paginate(10);
+        return view('admin.gallery.index',compact('galleries'));
     }
 
     /**
@@ -39,7 +39,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.create');
+        return view('admin.gallery.create');
     }
 
     /**
@@ -48,18 +48,43 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostPageRequest $request)
+    public function store(Request $request)
     {
         $payload = $request->post();
         $payload['created_by'] = auth()->user()->id;
-        $payload['status'] = 1;
-        $payload['slug'] = Str::slug($request->title);
-        $page = Page::create($payload);
+        if (request()->hasFile('images')) {
+            $destination = GALLERY_IMAGE_PATH;
 
-        flash('Created successfully')->success();
-        return redirect()->route('pages.edit', ['page' => $page->id]);
+            if (!File::isDirectory($destination)) {
+                File::makeDirectory($destination, 0777, true, true);
+            }
+            foreach (request()->file('images') as $key => $file) {
+                # code...
+                $fileName = Str::random(10) . '.' . $file->extension();
+
+                Image::make($file)->fit(1440, 910)->save($destination . '/' . $fileName);
+
+                $gallery = new Gallery();
+
+                $gallery->images = $fileName;
+                $gallery->save();
+            }
+        }
+
+        flash('Gallery created successfully')->success();
+        return redirect()->route('gallery.index');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -69,8 +94,7 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        $page = Page::find($id);
-        return view('admin.pages.edit', compact('page'));
+        //
     }
 
     /**
@@ -82,16 +106,7 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $payload = $request->post();
-        $payload['created_by'] = auth()->user()->id;
-        $payload['slug'] = Str::slug($request->title);
-        $page = Page::findOrFail($id);
-
-        if (!empty($page)) {
-            $page->update($payload);
-            flash('Updated successfully')->success();
-            return redirect()->route('pages.edit', ['page' => $page->id]);
-        }
+        //
     }
 
     /**
@@ -102,15 +117,6 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        $page = Page::findOrFail($id);
-
-        $page->update([
-            'deleted_by' => auth()->user()->id
-        ]);
-
-        $page->delete($id);
-
-        flash('Deleted successfully')->success();
-        return redirect()->route('pages.index');
+        //
     }
 }

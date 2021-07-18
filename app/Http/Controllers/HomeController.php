@@ -16,7 +16,10 @@ use App\Models\FounderMessage;
 use App\Models\Settings;
 use App\Models\Blog;
 use App\Models\Faq;
+use App\Models\Gallery;
 use App\Models\Page;
+use App\Models\PremiumClints;
+use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
@@ -47,7 +50,28 @@ class HomeController extends Controller
 
         $blogs = Blog::latest()->get();
 
-        return view('welcome', compact('sliders', 'teams', 'services', 'industries', 'mission', 'sliderServices', 'about', 'founder_message', 'setting', 'blogs'));
+        $testimonials = Testimonial::latest()->get();
+
+        $premium_clints = PremiumClints::latest()->get();
+
+        $gallery = Gallery::latest()->get();
+
+
+        return view('welcome', compact(
+            'sliders',
+            'teams',
+            'services',
+            'industries',
+            'mission',
+            'sliderServices',
+            'about',
+            'founder_message',
+            'setting',
+            'blogs',
+            'premium_clints',
+            'testimonials',
+            'gallery'
+        ));
     }
 
     public function getBlog()
@@ -96,5 +120,11 @@ class HomeController extends Controller
     {
         $faqs = Faq::get();
         return view('faq', compact('faqs'));
+    }
+
+    public function gallery()
+    {
+        $gallery = Gallery::get();
+        return view('gallery', compact('gallery'));
     }
 }

@@ -9,6 +9,16 @@ use App\Models\Settings;
 class SeoSettingController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

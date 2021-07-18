@@ -3,11 +3,22 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
 class ContactUsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +26,7 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::latest()->paginate(10);
+        $contacts = Appointment::latest()->paginate(10);
         return view('admin.user.index',compact('contacts'));
     }
 

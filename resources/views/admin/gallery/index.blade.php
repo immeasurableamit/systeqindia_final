@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-User | Systeqindia Facility Management Services
+    Premium Clients | Systeqindia Facility Management Services
 @endsection
 
 @section('content')
@@ -10,13 +10,15 @@ User | Systeqindia Facility Management Services
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="d-md-flex justify-content-between align-items-center mb-20">
-                        <h6 class="card-title mb-0">contact</h6>
+                        <h6 class="card-title mb-0">Gallery</h6>
                         <div>
+                            <a href="{{ route('gallery.create') }}" class="btn btn-primary mb-3">+ Add Gallery</a>
                         </div>
                     </div>
                     @include('flash::message')
@@ -27,41 +29,35 @@ User | Systeqindia Facility Management Services
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    {{-- <th class="custom-width-action">Action</th> --}}
+                                    <th>Image</th>
+                                    <th class="custom-width-action">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($contacts as $contact)
+                                @foreach ($galleries as $gallery)
 
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $contact->name }}</td>
-                                        <td>{{ $contact->email }}</td>
-                                        <td>{{ $contact->appartment_name }}</td>
-                                        <td>{{ $contact->phone_no }}</td>
-
-                                        {{-- <td>
+                                        <td>
+                                            <img class="" src="{{ GALLERY_IMAGE_URL . '/' . $gallery->images }}"
+                                                alt="slider image">
+                                        </td>
+                                        <td>
                                             <div>
-                                                <a href="{{ route('contact.edit', ['contact' => $contact->id]) }}"
+                                                <a href="{{ route('gallery.edit', ['gallery' => $gallery->id]) }}"
                                                     class="mr-2">
                                                     <i class="fa fa-edit text-info font-18"></i>
                                                 </a>
 
                                             </div>
-                                        </td> --}}
+                                        </td>
                                     </tr>
                                 @endforeach
 
                             </tbody>
                         </table>
                         <br>
-
-                        {{ $contacts->links('admin.pagination.custom') }}
-
+                        {{ $galleries->links('admin.pagination.custom') }}
                     </div>
                 </div>
             </div>

@@ -48,7 +48,7 @@
     <body>
 
         <div class="boxed_wrapper">
-            {{-- <div class="preloader"></div> --}}
+            <div class="preloader"></div>
 
             <!-- Start Top Bar style1 -->
             <section class="top-bar-style1">
@@ -78,7 +78,7 @@
                                     <div class="logo-box-style1 float-left">
                                         <a href="{{ url('/') }}">
                                             <img src="{{ SITE_LOGO_IMAGE_URL . '/' . $setting->id . '/' . $setting->site_logo }}"
-                                                alt="{{ $setting->short_description }}">
+                                                alt="{{ $setting->short_description }}" width="55%">
                                         </a>
 
                                     </div>
@@ -96,19 +96,16 @@
                                             <div class="navbar-collapse collapse clearfix">
                                                 <ul class="navigation clearfix">
                                                     <li class="dropdown current"><a href="{{ url('/') }}">Home</a>
-
                                                     </li>
                                                     <li class="dropdown"><a href="{{ url('about') }}">About Us</a>
-
                                                     </li>
                                                     <li class="dropdown"><a href="{{ url('services') }}">Services</a>
                                                     </li>
                                                     <li class="dropdown"><a href="{{ url('teams') }}">Our Team</a>
-
                                                     </li>
                                                     <li class="dropdown"><a href="{{ url('blog') }}">Blog</a>
-                                                        <li class="dropdown"><a href="{{ url('faq') }}">Faq</a>
-
+                                                    <li class="dropdown"><a href="{{ url('faq') }}">Faq</a>
+                                                    <li class="dropdown"><a href="{{ url('gallery') }}">Gallery</a>
                                                     <li><a href="{{ url('contact') }}">Contact</a></li>
                                                 </ul>
                                             </div>
@@ -279,6 +276,9 @@
                                     <ul>
                                         <li><a href="{{ url('/') }}">Home</a></li>
                                         <li><a href="{{ url('about') }}">About Us</a></li>
+                                        <li><a href="{{ url('faq') }}">Faq</a></li>
+                                        <li><a href="{{ url('gallery') }}">Gallery</a></li>
+
                                         <li><a href="{{ url('contact') }}">Contact Us</a></li>
                                         @foreach (App\Models\Page::all() as $item)
                                             <li><a href="{{ url('pages/' . $item->slug) }}">{{ $item->title }}</a>

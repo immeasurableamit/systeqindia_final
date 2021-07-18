@@ -4,8 +4,9 @@
             $setting = App\Models\Settings::first();
         @endphp
         {{-- <img src="{{ ADMIN_SMALL_LOGO_IMAGE_PATH . '/' . $setting->id . '/' . $setting->admin_small_logo }}" alt=""> --}}
-        <img class="text-center" src="http://systeqindia.therealcodes.in/public/files/site_logo/1/jOkQZeYUVv.png"
-            width="80px" alt="">
+        <a href="#" class="sidebar-brand">
+            SYSTEQ<span>India</span>
+        </a>
         <div class="sidebar-toggler not-active">
             <span></span>
             <span></span>
@@ -126,6 +127,13 @@
                 </a>
             </li>
 
+            <li class="nav-item @if (Route::is('gallery.index')) active @endif">
+                <a class="nav-link" href="{{ route('gallery.index') }}">
+                    <i class="fas fa-photo-video menu-icon"></i>
+                    <span class="link-title">Gallery</span>
+                </a>
+            </li>
+
             <li class="nav-item @if (Route::is('testimonial.*')) active @endif">
                 <a class="nav-link" href="{{ route('testimonial.index') }}">
                     <i class="fas fa-comment-alt menu-icon"></i>
@@ -151,13 +159,10 @@
                         <li class="nav-item"> <a class="nav-link " href="{{ route('site-image.create') }}">Site
                                 Images</a></li>
 
-                        <li class="nav-item"> <a class="nav-link"
-                                href="{{ route('faq.index') }}">Faq</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('faq.index') }}">Faq</a></li>
                     </ul>
                 </div>
             </li>
-
-
         </ul>
     </div>
 </nav>

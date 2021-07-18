@@ -46,6 +46,9 @@ define('BLOG_IMAGE_URL', url( '/public/files/blogs'));
 define('PREMIUM_CLIENTS_IMAGE_PATH', public_path() . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'premium-clients');
 define('PREMIUM_CLIENTS_IMAGE_URL', url( '/public/files/premium-clients'));
 
+define('GALLERY_IMAGE_PATH', public_path() . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR . 'gallery');
+define('GALLERY_IMAGE_URL', url( '/public/files/gallery'));
+
 
 
 class Controller extends BaseController

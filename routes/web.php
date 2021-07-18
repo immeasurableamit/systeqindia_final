@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\LabourController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PremiumClintsController;
@@ -57,6 +58,8 @@ Route::get('services', [HomeController::class, 'services']);
 Route::get('contact', [HomeController::class, 'contact']);
 
 Route::get('blog/{slug}', [HomeController::class, 'blogDescription']);
+
+Route::get('gallery', [HomeController::class,'gallery']);
 
 Route::get('faq', [HomeController::class, 'faq']);
 
@@ -131,5 +134,8 @@ Route::prefix('admin')->group(function () {
 
     Route::resource('premium-clients', PremiumClintsController::class);
     Route::post('premium-clients/{premium_client}', [PremiumClintsController::class, 'update']);
+
+    Route::resource('gallery', GalleryController::class);
+    Route::post('gallery/{gallery}', [GalleryController::class, 'update']);
 
 });
