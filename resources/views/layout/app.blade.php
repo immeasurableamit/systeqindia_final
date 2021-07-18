@@ -78,7 +78,7 @@
                                     <div class="logo-box-style1 float-left">
                                         <a href="{{ url('/') }}">
                                             <img src="{{ SITE_LOGO_IMAGE_URL . '/' . $setting->id . '/' . $setting->site_logo }}"
-                                                alt="{{ $setting->short_description }}" width="55%">
+                                                alt="{{ $setting->short_description }}" width="70%">
                                         </a>
 
                                     </div>
